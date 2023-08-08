@@ -17,5 +17,3 @@ fun containsDuplicate(nums: IntArray): Boolean {
 fun main() {
     println(containsDuplicate(intArrayOf(1, 2, 3, 4, 5)))
 }
-
-
