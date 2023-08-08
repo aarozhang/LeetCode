@@ -1,11 +1,11 @@
-package Solutions.ArrayHashing
+package solutions.arraysAndHashing
 
 class Solution {
     fun containsDuplicate(nums: IntArray): Boolean {
         val map = mutableMapOf<Int, Int>()
 
         for (n in nums) {
-            map.put(n, map.getOrDefault(n, 0) + 1)
+            map[n] = map.getOrDefault(n, 0) + 1
         }
 
         for (v in map.values) {
