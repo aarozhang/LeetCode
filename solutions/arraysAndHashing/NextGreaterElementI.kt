@@ -1,5 +1,7 @@
 package solutions.arraysAndHashing
 
+import java.util.*
+
 // O(n * m) time solution
 fun nextGreaterElementBruteForce(nums1: IntArray, nums2: IntArray): IntArray {
     val res = IntArray(nums1.size) { -1 }
@@ -26,3 +28,28 @@ fun nextGreaterElementBruteForce(nums1: IntArray, nums2: IntArray): IntArray {
     return res
 }
 
+// O(n + m) time solution
+fun nextGreaterElementOptimized(nums1: IntArray, nums2: IntArray): IntArray {
+    val res = IntArray(nums1.size) { -1 }
+    val map = mutableMapOf<Int, Int>()
+
+    for (i in nums1.indices) {
+        map[nums1[i]] = i
+    }
+
+    val stack = Stack<Int>()
+
+    for (curr in nums2) {
+        while (!stack.empty() && curr > stack.peek()) {
+            val element = stack.pop()
+            val index = map[element]!!
+            res[index] = curr
+        }
+
+        if (curr in map) {
+            stack.push(curr)
+        }
+    }
+
+    return res
+}
