@@ -1,17 +1,16 @@
 package solutions.arraysAndHashing
 
 fun lengthOfLastWord(s: String): Int {
-    val string = s.trim(' ')
+    val str = s.trim(' ')
+    var len = 0
 
-    var lastWordLen = 0
+    for (i in str.length - 1 downTo 0) {
+        if (str[i] == ' ') {
+            break
+        }
 
-    for (i in string.length - 1 downTo 0) {
-        if (i == 0) return lastWordLen + 1
-
-        if (string[i] == ' ') return lastWordLen
-
-        lastWordLen += 1
+        len += 1
     }
 
-    return 0
+    return len
 }
