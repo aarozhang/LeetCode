@@ -1,4 +1,4 @@
-package solutions.MathGeometry
+package solutions.mathAndGeometry
 
 // O(n) time and space
 
