@@ -2,6 +2,7 @@ package solutions.graphs
 
 // O(n x m) time; O(1) space
 
+// Single traversal approach
 fun islandPerimeter(grid: Array<IntArray>): Int {
     if (grid.isEmpty() || grid[0].isEmpty()) return 0
 
@@ -25,3 +26,5 @@ fun islandPerimeter(grid: Array<IntArray>): Int {
 
     return perim
 }
+
+// Todo: DFS approach
