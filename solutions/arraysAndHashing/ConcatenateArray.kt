@@ -1,13 +1,14 @@
 package solutions.arraysAndHashing
 
-fun getConcatenation(nums: IntArray): IntArray {
-    val numsSize = nums.size
-    val ans = Array(numsSize * 2){0}
+// O(n) time and space
 
-    for (i in 0 until numsSize) {
-        ans[i] = nums[i]
-        ans[i + numsSize] = nums[i]
+fun getConcatenation(nums: IntArray): IntArray {
+    val res = IntArray(nums.size * 2) {0}
+
+    for (i in nums.indices) {
+        res[i] = nums[i]
+        res[i + nums.size] = nums[i]
     }
 
-    return ans.toIntArray()
+    return res
 }
