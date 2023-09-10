@@ -2,7 +2,7 @@ package solutions.stack
 
 import java.util.*
 
-// O(n) times, space
+// O(n) time, space
 fun calculate(s: String): Int {
     val stack = Stack<Int>()
     var currNumber = 0
