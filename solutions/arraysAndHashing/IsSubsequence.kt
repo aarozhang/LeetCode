@@ -1,5 +1,7 @@
 package solutions.arraysAndHashing
 
+// O(s + t) time, O(1) space
+
 fun isSubsequence(s: String, t: String): Boolean {
     var i = 0
     var j = 0
