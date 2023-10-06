@@ -1,9 +1,11 @@
 package solutions.arraysAndHashing
 
+// O(n * m) time, space: where m is the avg length of the strings
+
 fun longestCommonPrefix(strs: Array<String>): String {
     val map = mutableMapOf<String, Int>()
 
-    for (s in strs) {
+    for (s in strs) { // count up all prefix occurrences
         var prefix = ""
         for (c in s) {
             prefix += c
@@ -15,7 +17,7 @@ fun longestCommonPrefix(strs: Array<String>): String {
     var res = ""
 
     for ((k, v) in map) {
-        if (k.length > maxLen && v == strs.size) {
+        if (k.length > maxLen && v == strs.size) { // find longest common prefix
             res = k
             maxLen = k.length
         }
