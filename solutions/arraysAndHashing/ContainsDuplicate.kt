@@ -1,14 +1,14 @@
 package solutions.arraysAndHashing
 
+// O(n) time & space
+
 fun containsDuplicate(nums: IntArray): Boolean {
-    val map = mutableMapOf<Int, Int>()
+    val seen = mutableMapOf<Int, Int>()
 
     for (n in nums) {
-        map[n] = map.getOrDefault(n, 0) + 1
-    }
+        seen[n] = seen.getOrDefault(n, 0) + 1
 
-    for (v in map.values) {
-        if (v >= 2) return true
+        if (seen[n]!! >= 2) return true
     }
 
     return false
