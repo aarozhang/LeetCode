@@ -1,24 +1,23 @@
 package solutions.arraysAndHashing
 
-// O(n) time O(n) memory
+// O(n) time O(1) memory
 fun pivotIndex(nums: IntArray): Int {
-    val leftSums = IntArray(nums.size)
-    val rightSums = IntArray(nums.size)
+    var rightSum = 0
 
-    var sum = 0
-    for (i in nums.indices) {
-        leftSums[i] = sum
-        sum += nums[i]
+    for (n in nums) {
+        rightSum += n
     }
 
-    sum = 0
-    for (i in nums.size - 1 downTo 0) {
-        rightSums[i] = sum
-        sum += nums[i]
-    }
+    var leftSum = 0
 
     for (i in nums.indices) {
-        if (leftSums[i] == rightSums[i]) return i
+        rightSum -= nums[i]
+
+        if (leftSum == rightSum) {
+            return i
+        }
+
+        leftSum += nums[i]
     }
 
     return -1
