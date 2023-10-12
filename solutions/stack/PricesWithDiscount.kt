@@ -7,8 +7,8 @@ fun finalPrices(prices: IntArray): IntArray {
     val stack = Stack<Int>()
     val res = IntArray(prices.size) { 0 }
 
-    stack.push(prices[prices.size - 1])
-    res[res.size - 1] = stack.peek()
+    stack.push(prices[prices.lastIndex])
+    res[res.lastIndex] = stack.peek()
 
     for (i in prices.size - 2 downTo 0) {
         while (!stack.empty() && stack.peek() > prices[i]) {
