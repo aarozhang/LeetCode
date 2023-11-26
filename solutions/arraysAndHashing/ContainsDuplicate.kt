@@ -3,12 +3,12 @@ package solutions.arraysAndHashing
 // O(n) time & space
 
 fun containsDuplicate(nums: IntArray): Boolean {
-    val seen = mutableMapOf<Int, Int>()
+    val seen = mutableSetOf<Int>()
 
     for (n in nums) {
-        seen[n] = seen.getOrDefault(n, 0) + 1
+        if (n in seen) return true
 
-        if (seen[n]!! >= 2) return true
+        seen.add(n)
     }
 
     return false
