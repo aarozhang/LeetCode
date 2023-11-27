@@ -1,5 +1,7 @@
 package solutions.arraysAndHashing
 
+import kotlin.math.abs
+
 // O(n) time, space
 fun leftRightDifference(nums: IntArray): IntArray {
     if (nums.size == 1) return intArrayOf(0)
